@@ -1,0 +1,65 @@
+.textContainer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    flex-direction: column;
+    top: 30%;
+    left: 0;
+    width: 100%;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    background-color: #ce0021;
+    height: 30px;
+    padding: 2px;
+    margin-right: auto;
+    margin-left: auto;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 11%;
+
+}
+
+.buttonContainer a {
+    font-size: 22px;
+}
+
+
+.textContainer b {
+    color: white;
+    font-size: 30px;
+}
+
+.secondText {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 992px) {
+
+    .textContainer b {
+        font-size: 20px;
+    }
+
+    .textContainer p {
+        font-size: 15px;
+    }
+
+  .buttonContainer a {
+      font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+    .buttonContainer a {
+        font-size: 11px;
+    }
+}

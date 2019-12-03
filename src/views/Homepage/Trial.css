@@ -1,0 +1,65 @@
+.centered {
+    text-align: center;
+}
+
+.margin {
+    margin-bottom: 50px;
+}
+
+margin b {
+    color: #282c34;
+}
+
+
+
+.margin p {
+    margin: 0px 100px 20px 100px;
+    color: black;
+    font-size: 25px;
+    font-weight: lighter;
+ }
+
+
+#trial-button {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    padding: 5px;
+    text-align: center;
+    background-color: #ce0021;
+}
+
+#trial-button a {
+    font-size: 25px;
+    padding: 5px;
+}
+
+@media screen and (max-width: 992px) {
+    .margin {
+        margin-top: 75px;
+    }
+
+
+    .margin p {
+        margin: 75px 75px 15px 75px;
+        font-size: 20px;
+    }
+    #trial-button a {
+        font-size: 17px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .margin {
+        margin-top: 50px;
+    }
+
+    .margin p {
+        margin: 50px 50px 10px 50px;
+        font-size: 15px;
+    }
+    #trial-button a {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,43 @@
+.arrow-down {
+    margin: 10px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #ce0021;
+    transition: border-left 0.5ms, border-right 0.5ms, opacity 0.5ms ;
+}
+
+.arrow-down-hidden {
+    opacity: 0;
+    margin: 10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #61dafb;
+    transition: opacity 0.5ms;
+}
+
+#activatedTextStyle
+{
+    transition: color 0.5ms;
+    color: #af1822;
+    font-weight: bold;
+    font-size : 25px
+}
+
+#iddleTextStyle {
+    color: #757873;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
