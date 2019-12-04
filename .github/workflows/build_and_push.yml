@@ -19,8 +19,7 @@ jobs:
     steps:
     - name: Install dependencies
       run: |
-        sudo apt-get install python-setuptools
-        pip install pyopenssl --user
+        sudo apt-get install python3-setuptools
         pip3 install pyopenssl --user
 
     - name: Checkout repository
