@@ -12,6 +12,7 @@ env:
   GITHUB_SHA: ${{ github.sha }}
   IMAGE: netive-showcase-front
   CLOUDSDK_PYTHON_SITEPACKAGES: 1
+  PYTHONIOENCODING: UTF-8
 jobs:
   setup-build-publish-deploy:
     name: Setup, Build, Publish
