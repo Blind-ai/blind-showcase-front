@@ -19,8 +19,9 @@ jobs:
     steps:
     - name: Install dependencies
       run: |
-        sudo apt-get install python3-setuptools
-        pip3 install pyopenssl --user
+        sudo apt-get install python-setuptools
+        pip install wheel
+        pip install pyopenssl
 
     - name: Checkout repository
       uses: actions/checkout@master
