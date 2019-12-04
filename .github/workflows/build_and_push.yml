@@ -17,21 +17,22 @@ jobs:
     name: Setup, Build, Publish
     runs-on: ubuntu-latest
     steps:
+    - name: Install dependencies
+      run: |  
+        pip install pyopenssl --user
+        pip3 install pyopenssl --user
 
-    - name: Checkout
+    - name: Checkout repository
       uses: actions/checkout@master
 
     # Setup gcloud CLI
+    - name: Install GCP CLI
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
         version: '270.0.0'
         service_account_email: ${{ secrets.GKE_EMAIL }}
         service_account_key: ${{ secrets.GKE_KEY }}
-
-    # Configure docker to use the gcloud command-line tool as a credential helper
     - run: |
-        pip install pyopenssl --user
-        pip3 install pyopenssl --user
         gcloud auth configure-docker
       
     # Build the Docker image
