@@ -3,7 +3,7 @@ name: Build and Push to registry
 on:
   push:
     branches:
-    - master
+    - 'releases/**'
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -48,4 +48,4 @@ jobs:
     # Push the Docker image to Google Container Registry
     - name: Publish
       run: |
-        docker push gcr.io/$GKE_PROJECT/$IMAGE:$GITHUB_SHA
+        docker push gcr.io/$GKE_PROJECT/$IMAGE:${GITHUB_REF##*/}
