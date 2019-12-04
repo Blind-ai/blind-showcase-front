@@ -9,7 +9,7 @@ on:
 env:
   GKE_PROJECT: ${{ secrets.GKE_PROJECT }}
   GKE_EMAIL: ${{ secrets.GKE_EMAIL }}
-  GITHUB_SHA: ${{ github.sha }}
+  GITHUB_SHA: ${GITHUB_REF##*/}
   IMAGE: netive-showcase-front
 
 jobs:
@@ -42,10 +42,10 @@ jobs:
     - name: Build docker image
       run: |        
         docker build -t gcr.io/"$GKE_PROJECT"/"$IMAGE":"$GITHUB_SHA" \
-          --build-arg GITHUB_SHA="${GITHUB_REF##*/}" \
+          --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" .
 
     # Push the Docker image to Google Container Registry
     - name: Publish
       run: |
-        docker push gcr.io/$GKE_PROJECT/$IMAGE:${GITHUB_REF##*/}
+        docker push gcr.io/$GKE_PROJECT/$IMAGE:$GITHUB_SHA
