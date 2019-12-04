@@ -30,8 +30,8 @@ jobs:
 
     # Configure docker to use the gcloud command-line tool as a credential helper
     - run: |
-        # Set up docker to authenticate
-        # via gcloud command-line tool.
+        pip install pyopenssl --user
+        pip3 install pyopenssl --user
         gcloud auth configure-docker
       
     # Build the Docker image
