@@ -45,7 +45,7 @@ jobs:
     # Build the Docker image
     - name: Build docker image
       run: |        
-        docker build -t gcr.io/"$GKE_PROJECT"/"$IMAGE":${{ steps.extract_branch.outputs.branch }}
+        docker build -t gcr.io/$GKE_PROJECT/$IMAGE:${{ steps.extract_branch.outputs.branch }}
 
     # Push the Docker image to Google Container Registry
     - name: Publish
