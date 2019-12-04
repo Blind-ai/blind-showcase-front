@@ -9,7 +9,6 @@ on:
 env:
   GKE_PROJECT: ${{ secrets.GKE_PROJECT }}
   GKE_EMAIL: ${{ secrets.GKE_EMAIL }}
-  GITHUB_BRANCH: ${{GITHUB_REF##*/}}
   IMAGE: netive-showcase-front
 
 jobs:
@@ -46,11 +45,9 @@ jobs:
     # Build the Docker image
     - name: Build docker image
       run: |        
-        docker build -t gcr.io/"$GKE_PROJECT"/"$IMAGE":"$GITHUB_BRANCH" \
-          --build-arg GITHUB_BRANCH="$GITHUB_BRANCH" \
-          --build-arg GITHUB_REF="$GITHUB_REF" .
+        docker build -t gcr.io/"$GKE_PROJECT"/"$IMAGE":${{ steps.extract_branch.outputs.branch }}
 
     # Push the Docker image to Google Container Registry
     - name: Publish
       run: |
-        docker push gcr.io/$GKE_PROJECT/$IMAGE:$GITHUB_BRANCH
+        docker push gcr.io/$GKE_PROJECT/$IMAGE:${{ steps.extract_branch.outputs.branch }}
