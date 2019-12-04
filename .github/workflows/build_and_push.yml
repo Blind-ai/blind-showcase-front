@@ -34,7 +34,7 @@ jobs:
         service_account_email: ${{ secrets.GKE_EMAIL }}
         service_account_key: ${{ secrets.GKE_KEY }}
         
-    - name  : Configure docker to use GCP Cli
+    - name  : Configure docker to use GCP CLI
       run: |
         gcloud auth configure-docker
       
