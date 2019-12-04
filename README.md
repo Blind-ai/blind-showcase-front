@@ -1,6 +1,6 @@
 ![](.github/banner.png)
 
-# Netive Frontend
+# Netive Showcase Frontend
 
 This repository contains the frontend source code for Netive showcase website
 
