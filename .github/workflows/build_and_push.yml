@@ -18,7 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Install dependencies
-      run: |  
+      run: |
+        apt-get install python-setuptools
         pip install pyopenssl --user
         pip3 install pyopenssl --user
 
