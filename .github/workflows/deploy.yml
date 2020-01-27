@@ -61,7 +61,7 @@ jobs:
     - name: Install helm
       run: |
         wget https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz
-        tar xvf https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz
+        tar xvf helm-v2.16.1-linux-amd64.tar.gz
         mv linux-amd64/helm /usr/local/bin
         
     # Deploy the Docker image to the GKE cluster
@@ -69,5 +69,5 @@ jobs:
       run: |
         gcloud container clusters get-credentials $GKE_CLUSTER --zone $GKE_ZONE --project $GKE_PROJECT
         kubectl get services -o wide
-        helm help
+        helm install ./chart --name=blind-showcase-front
 
