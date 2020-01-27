@@ -62,7 +62,7 @@ jobs:
       run: |
         wget https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz
         tar xvf helm-v2.16.1-linux-amd64.tar.gz
-        mv linux-amd64/helm /usr/local/bin
+        sudo mv linux-amd64/helm /usr/local/bin
         
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
