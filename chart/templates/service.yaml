@@ -6,7 +6,7 @@ metadata:
 {{ include "chart.labels" . | indent 4 }}
 spec:
   type: LoadBalancer
-  loadBalancerIP: "34.70.110.213"
+  loadBalancerIP: "35.193.238.108"
   ports:
     - port: {{ .Values.service.port }}
       targetPort: 8080
